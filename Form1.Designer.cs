@@ -35,15 +35,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.NewStudentBtn = new System.Windows.Forms.Button();
+            this.EnrollStudentBtn = new System.Windows.Forms.Button();
+            this.SubjectBtn = new System.Windows.Forms.Button();
+            this.SectionBtn = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.containerRender = new System.Windows.Forms.Panel();
+            this.navbarContainer = new System.Windows.Forms.Panel();
+            this.titleLb = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
             this.panel2.SuspendLayout();
+            this.navbarContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -51,9 +55,9 @@
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Controls.Add(this.panel2);
-            this.sidebar.Controls.Add(this.button2);
-            this.sidebar.Controls.Add(this.button3);
-            this.sidebar.Controls.Add(this.button4);
+            this.sidebar.Controls.Add(this.EnrollStudentBtn);
+            this.sidebar.Controls.Add(this.SubjectBtn);
+            this.sidebar.Controls.Add(this.SectionBtn);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(200, 0);
@@ -96,82 +100,130 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.NewStudentBtn);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel2.Location = new System.Drawing.Point(3, 39);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(197, 41);
             this.panel2.TabIndex = 1;
             // 
-            // button1
+            // NewStudentBtn
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 41);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "New Student";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.NewStudentBtn.FlatAppearance.BorderSize = 0;
+            this.NewStudentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewStudentBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewStudentBtn.ForeColor = System.Drawing.Color.White;
+            this.NewStudentBtn.Image = ((System.Drawing.Image)(resources.GetObject("NewStudentBtn.Image")));
+            this.NewStudentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NewStudentBtn.Location = new System.Drawing.Point(0, 0);
+            this.NewStudentBtn.Name = "NewStudentBtn";
+            this.NewStudentBtn.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.NewStudentBtn.Size = new System.Drawing.Size(197, 41);
+            this.NewStudentBtn.TabIndex = 2;
+            this.NewStudentBtn.Text = "         New Student";
+            this.NewStudentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NewStudentBtn.UseVisualStyleBackColor = true;
+            this.NewStudentBtn.Click += new System.EventHandler(this.NewStudentBtn_Click);
             // 
-            // button2
+            // EnrollStudentBtn
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(3, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 41);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Enroll Student";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.EnrollStudentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EnrollStudentBtn.FlatAppearance.BorderSize = 0;
+            this.EnrollStudentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnrollStudentBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnrollStudentBtn.ForeColor = System.Drawing.Color.White;
+            this.EnrollStudentBtn.Image = ((System.Drawing.Image)(resources.GetObject("EnrollStudentBtn.Image")));
+            this.EnrollStudentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EnrollStudentBtn.Location = new System.Drawing.Point(3, 86);
+            this.EnrollStudentBtn.Name = "EnrollStudentBtn";
+            this.EnrollStudentBtn.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.EnrollStudentBtn.Size = new System.Drawing.Size(197, 41);
+            this.EnrollStudentBtn.TabIndex = 3;
+            this.EnrollStudentBtn.Text = "         Enroll Student";
+            this.EnrollStudentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EnrollStudentBtn.UseVisualStyleBackColor = true;
+            this.EnrollStudentBtn.Click += new System.EventHandler(this.EnrollStudentBtn_Click);
             // 
-            // button3
+            // SubjectBtn
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(3, 133);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 41);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Subject";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.SubjectBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SubjectBtn.FlatAppearance.BorderSize = 0;
+            this.SubjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SubjectBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectBtn.ForeColor = System.Drawing.Color.White;
+            this.SubjectBtn.Image = ((System.Drawing.Image)(resources.GetObject("SubjectBtn.Image")));
+            this.SubjectBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SubjectBtn.Location = new System.Drawing.Point(3, 133);
+            this.SubjectBtn.Name = "SubjectBtn";
+            this.SubjectBtn.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.SubjectBtn.Size = new System.Drawing.Size(197, 41);
+            this.SubjectBtn.TabIndex = 4;
+            this.SubjectBtn.Text = "         Subject";
+            this.SubjectBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SubjectBtn.UseVisualStyleBackColor = true;
+            this.SubjectBtn.Click += new System.EventHandler(this.SubjectBtn_Click);
             // 
-            // button4
+            // SectionBtn
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(3, 180);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 41);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Section";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.SectionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SectionBtn.FlatAppearance.BorderSize = 0;
+            this.SectionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SectionBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectionBtn.ForeColor = System.Drawing.Color.White;
+            this.SectionBtn.Image = ((System.Drawing.Image)(resources.GetObject("SectionBtn.Image")));
+            this.SectionBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SectionBtn.Location = new System.Drawing.Point(3, 180);
+            this.SectionBtn.Name = "SectionBtn";
+            this.SectionBtn.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.SectionBtn.Size = new System.Drawing.Size(197, 41);
+            this.SectionBtn.TabIndex = 5;
+            this.SectionBtn.Text = "         Section";
+            this.SectionBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SectionBtn.UseVisualStyleBackColor = true;
+            this.SectionBtn.Click += new System.EventHandler(this.SectionBtn_Click);
             // 
             // sidebarTimer
             // 
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
+            // containerRender
+            // 
+            this.containerRender.BackColor = System.Drawing.Color.Linen;
+            this.containerRender.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.containerRender.Location = new System.Drawing.Point(200, 32);
+            this.containerRender.Name = "containerRender";
+            this.containerRender.Size = new System.Drawing.Size(712, 418);
+            this.containerRender.TabIndex = 1;
+            // 
+            // navbarContainer
+            // 
+            this.navbarContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.navbarContainer.Controls.Add(this.titleLb);
+            this.navbarContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navbarContainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navbarContainer.Location = new System.Drawing.Point(200, 0);
+            this.navbarContainer.Name = "navbarContainer";
+            this.navbarContainer.Size = new System.Drawing.Size(712, 32);
+            this.navbarContainer.TabIndex = 2;
+            // 
+            // titleLb
+            // 
+            this.titleLb.AutoSize = true;
+            this.titleLb.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLb.Location = new System.Drawing.Point(29, 6);
+            this.titleLb.Name = "titleLb";
+            this.titleLb.Size = new System.Drawing.Size(89, 21);
+            this.titleLb.TabIndex = 0;
+            this.titleLb.Text = "Dashboard";
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(912, 450);
+            this.Controls.Add(this.navbarContainer);
+            this.Controls.Add(this.containerRender);
             this.Controls.Add(this.sidebar);
             this.Name = "StudentForm";
             this.Text = "Student Enrollment";
@@ -180,6 +232,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.navbarContainer.ResumeLayout(false);
+            this.navbarContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -189,13 +243,16 @@
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button NewStudentBtn;
+        private System.Windows.Forms.Button EnrollStudentBtn;
+        private System.Windows.Forms.Button SubjectBtn;
+        private System.Windows.Forms.Button SectionBtn;
         private System.Windows.Forms.PictureBox menuButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
+        private System.Windows.Forms.Panel containerRender;
+        private System.Windows.Forms.Panel navbarContainer;
+        private System.Windows.Forms.Label titleLb;
     }
 }
 

@@ -46,5 +46,25 @@ namespace Student_Enroll_WindowForm
         {
             sidebarTimer.Start();
         }
+
+        private void NewStudentBtn_Click(object sender, EventArgs e)
+        {
+            titleLb.Text = "New Student";
+        }
+
+        private void EnrollStudentBtn_Click(object sender, EventArgs e)
+        {
+            titleLb.Text = "Enroll Student";
+        }
+
+        private void SubjectBtn_Click(object sender, EventArgs e)
+        {
+            titleLb.Text = "Subject";
+        }
+
+        private void SectionBtn_Click(object sender, EventArgs e)
+        {
+            titleLb.Text = "Section";
+        }
     }
 }
