@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.menuTitle = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NewStudentBtn = new System.Windows.Forms.Button();
@@ -40,9 +40,9 @@
             this.SubjectBtn = new System.Windows.Forms.Button();
             this.SectionBtn = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
-            this.containerRender = new System.Windows.Forms.Panel();
             this.navbarContainer = new System.Windows.Forms.Panel();
             this.titleLb = new System.Windows.Forms.Label();
+            this.containerRender = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -68,23 +68,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.menuTitle);
             this.panel1.Controls.Add(this.menuButton);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(197, 30);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // menuTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Menu";
+            this.menuTitle.AutoSize = true;
+            this.menuTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuTitle.ForeColor = System.Drawing.Color.White;
+            this.menuTitle.Location = new System.Drawing.Point(40, 6);
+            this.menuTitle.Name = "menuTitle";
+            this.menuTitle.Size = new System.Drawing.Size(50, 21);
+            this.menuTitle.TabIndex = 1;
+            this.menuTitle.Text = "Menu";
             // 
             // menuButton
             // 
@@ -187,43 +187,45 @@
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
-            // containerRender
-            // 
-            this.containerRender.BackColor = System.Drawing.Color.Linen;
-            this.containerRender.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.containerRender.Location = new System.Drawing.Point(200, 32);
-            this.containerRender.Name = "containerRender";
-            this.containerRender.Size = new System.Drawing.Size(712, 418);
-            this.containerRender.TabIndex = 1;
-            // 
             // navbarContainer
             // 
-            this.navbarContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.navbarContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(192)))), ((int)(((byte)(254)))));
             this.navbarContainer.Controls.Add(this.titleLb);
             this.navbarContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.navbarContainer.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navbarContainer.Location = new System.Drawing.Point(200, 0);
             this.navbarContainer.Name = "navbarContainer";
-            this.navbarContainer.Size = new System.Drawing.Size(712, 32);
-            this.navbarContainer.TabIndex = 2;
+            this.navbarContainer.Size = new System.Drawing.Size(712, 40);
+            this.navbarContainer.TabIndex = 0;
             // 
             // titleLb
             // 
             this.titleLb.AutoSize = true;
+            this.titleLb.BackColor = System.Drawing.Color.Transparent;
             this.titleLb.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLb.Location = new System.Drawing.Point(29, 6);
+            this.titleLb.ForeColor = System.Drawing.Color.White;
+            this.titleLb.Location = new System.Drawing.Point(29, 10);
             this.titleLb.Name = "titleLb";
             this.titleLb.Size = new System.Drawing.Size(89, 21);
             this.titleLb.TabIndex = 0;
             this.titleLb.Text = "Dashboard";
+            // 
+            // containerRender
+            // 
+            this.containerRender.BackColor = System.Drawing.Color.White;
+            this.containerRender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.containerRender.Location = new System.Drawing.Point(200, 40);
+            this.containerRender.Name = "containerRender";
+            this.containerRender.Size = new System.Drawing.Size(712, 410);
+            this.containerRender.TabIndex = 0;
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 450);
-            this.Controls.Add(this.navbarContainer);
             this.Controls.Add(this.containerRender);
+            this.Controls.Add(this.navbarContainer);
             this.Controls.Add(this.sidebar);
             this.Name = "StudentForm";
             this.Text = "Student Enrollment";
@@ -248,11 +250,11 @@
         private System.Windows.Forms.Button SubjectBtn;
         private System.Windows.Forms.Button SectionBtn;
         private System.Windows.Forms.PictureBox menuButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label menuTitle;
         private System.Windows.Forms.Timer sidebarTimer;
-        private System.Windows.Forms.Panel containerRender;
         private System.Windows.Forms.Panel navbarContainer;
         private System.Windows.Forms.Label titleLb;
+        private System.Windows.Forms.Panel containerRender;
     }
 }
 

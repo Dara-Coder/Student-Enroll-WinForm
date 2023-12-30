@@ -12,7 +12,8 @@ namespace Student_Enroll_WindowForm
 {
     public partial class StudentForm : Form
     {
-        bool sidebarExpand;
+        private bool sidebarExpand;
+        private Form activeForm;
         public StudentForm()
         {
             InitializeComponent();
@@ -42,6 +43,21 @@ namespace Student_Enroll_WindowForm
             }
         }
 
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            containerRender.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void menuButton_Click(object sender, EventArgs e)
         {
             sidebarTimer.Start();
@@ -50,21 +66,25 @@ namespace Student_Enroll_WindowForm
         private void NewStudentBtn_Click(object sender, EventArgs e)
         {
             titleLb.Text = "New Student";
+            OpenChildForm(new Forms.NewStudentForm(), sender);
         }
 
         private void EnrollStudentBtn_Click(object sender, EventArgs e)
         {
             titleLb.Text = "Enroll Student";
+            OpenChildForm(new Forms.NewEnrollStudentForm(), sender);
         }
 
         private void SubjectBtn_Click(object sender, EventArgs e)
         {
             titleLb.Text = "Subject";
+            OpenChildForm(new Forms.SubjectForm(), sender);
         }
 
         private void SectionBtn_Click(object sender, EventArgs e)
         {
             titleLb.Text = "Section";
+            OpenChildForm(new Forms.SectionForm(), sender);
         }
     }
 }
